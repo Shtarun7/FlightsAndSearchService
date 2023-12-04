@@ -10,6 +10,7 @@ class CityService {
       return city;
     } catch (e) {
       console.log("error::service layer:create city");
+      throw e;
     }
   }
   async deleteCity(cityId) {
@@ -18,6 +19,7 @@ class CityService {
       return response;
     } catch (e) {
       console.log("error::service layer:delete city");
+      throw e;
     }
   }
   async updateCity(cityId, data) {
@@ -26,6 +28,7 @@ class CityService {
       return city;
     } catch (e) {
       console.log("error::service layer:update city");
+      throw e;
     }
   }
   async getCity(cityId) {
@@ -34,6 +37,9 @@ class CityService {
       return city;
     } catch (e) {
       console.log("error::service layer:get city");
+      throw e;
     }
   }
 }
+
+module.exports = CityService;
