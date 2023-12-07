@@ -1,9 +1,12 @@
 const { City } = require("../models/index");
 const { Op } = require("sequelize");
 class CityRepository {
-  async createCity({ name }) {
+  constructor(){
+    console.log('city repo constructor called')
+  }
+  async createCity(data){
     try {
-      const city = await City.create({ name });
+      const city = await City.bulkCreate(data);
       return city;
     } catch (e) {
       console.log("Something went wrong in the repository layer::create city");

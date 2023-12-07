@@ -4,9 +4,10 @@ const cityService = new CityService();
 
 const create = async (req, res) => {
   try {
-    const city = await cityService.createCity(req.body);
+    const cities = await cityService.createCity(req.body.cities);
+    // console.log("city controller :: req body", req.body);
     return res.status(201).json({
-      data: city,
+      data: cities,
       success: true,
       message: "Successfuly created city",
       err: {},
